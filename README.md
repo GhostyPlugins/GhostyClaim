@@ -34,21 +34,22 @@ Supports Minecraft 1.21+ (Bukkit, Spigot & Paper).
 
 # 🧾 Commands
 
-| Command |	Description	| Permission
-| /claim	| Create a new claim or enter expansion mode if standing in your own claim |	ghostyclaim.claim.create
-| /claim expand | 	Explicitly start claim expansion mode | 	ghostyclaim.claim.expand
-| /claim menu	| Open the claim management GUI	| ghostyclaim.use
-| /claim list	| List all your claims	| ghostyclaim.use
-| /claim delete	| Delete the claim you are standing in	| ghostyclaim.claim.delete
-| /claim trust <player>	| Trust a player in your claim | 	ghostyclaim.claim.trust
-| /claim untrust <player>	| Remove a player's trust	| ghostyclaim.claim.trust
-| /claim flags	| Open the flags GUI for your claim	| ghostyclaim.claim.flags
-| /claim rename <name>	| Rename your claim	| ghostyclaim.use
-| /claim visualize	| Toggle the particle border visualizer	| ghostyclaim.claim.visualize
-| /claim info	| Display claim information	| ghostyclaim.use
-| /claim cancel	| Cancel an active claim creation or expansion | session	ghostyclaim.use
-| /claim admin [player]	| Open the admin GUI, optionally filtered by player	| ghostyclaim.admin.gui
-| /claimreload	| Reload the plugin configuration	| ghostyclaim.admin.reload
+| Command | Description | Permission |
+|--------|-------------|------------|
+| `/claim` | Create a new claim or enter expansion mode if standing in your own | ghostyclaim.claim.create |
+| `/claim expand` | Explicitly start claim expansion mode | ghostyclaim.claim.expand |
+| `/claim menu` | Open the claim management GUI | ghostyclaim.use |
+| `/claim list` | List all your claims | ghostyclaim.use |
+| `/claim delete` | Delete the claim you are standing in | ghostyclaim.claim.delete |
+| `/claim trust <player>` | Trust a player in your claim | ghostyclaim.claim.trust |
+| `/claim untrust <player>` | Remove a player's trust | ghostyclaim.claim.trust |
+| `/claim flags` | Open the flags GUI for your claim | ghostyclaim.claim.flags |
+| `/claim rename <name>` | Rename your claim | ghostyclaim.use |
+| `/claim visualize` | Toggle the particle border visualizer | ghostyclaim.claim.visualize |
+| `/claim info` | Display claim information | ghostyclaim.use |
+| `/claim cancel` | Cancel an active claim creation or expansion session | ghostyclaim.use |
+| `/claim admin [player]` | Open the admin GUI, optionally filtered by player | ghostyclaim.admin.gui |
+| `/claimreload` | Reload the plugin configuration | ghostyclaim.admin.reload |
 
 
 # ⚙️ Installation
