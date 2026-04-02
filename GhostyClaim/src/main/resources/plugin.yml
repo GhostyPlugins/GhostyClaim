@@ -1,0 +1,60 @@
+name: GhostyClaim
+version: ${project.version}
+main: de.gergh0stface.ghostyclaim.GhostyClaim
+api-version: '1.21'
+author: Ger_Gh0stface
+description: A feature-rich claim plugin for survival worlds
+softdepend:
+  - Vault
+  - Essentials
+  - LuckPerms
+
+commands:
+  claim:
+    description: Main GhostyClaim command
+    usage: /claim [subcommand]
+    aliases: [claims, c]
+  claimreload:
+    description: Reload the GhostyClaim plugin
+    usage: /claimreload
+    permission: ghostyclaim.admin.reload
+
+permissions:
+  ghostyclaim.use:
+    description: Allows using the basic claim features
+    default: true
+  ghostyclaim.admin:
+    description: Full admin access
+    default: op
+  ghostyclaim.admin.reload:
+    description: Allows reloading the plugin
+    default: op
+  ghostyclaim.admin.bypass:
+    description: Bypass claim protections
+    default: op
+  ghostyclaim.admin.deleteclaim:
+    description: Delete any claim
+    default: op
+  ghostyclaim.admin.gui:
+    description: Access the admin claim management GUI
+    default: op
+  ghostyclaim.claim.create:
+    description: Allows creating claims
+    default: true
+  ghostyclaim.claim.delete:
+    description: Allows deleting own claims
+    default: true
+  ghostyclaim.claim.trust:
+    description: Allows trusting players
+    default: true
+  ghostyclaim.claim.flags:
+    description: Allows managing claim flags
+    default: true
+  ghostyclaim.claim.visualize:
+    description: Allows using the visualizer
+    default: true
+  ghostyclaim.claim.expand:
+    description: Allows expanding an existing claim
+    default: true
+  # ghostyclaim.maxclaims.<n> nodes are defined dynamically via config.yml
+  # under rank-permissions.permission-nodes — you can use any number you like.

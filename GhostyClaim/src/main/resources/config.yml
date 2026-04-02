@@ -1,0 +1,176 @@
+# GhostyClaim Configuration
+# Author: Ger_Gh0stface
+
+# Language Settings
+# Available: en, de
+language: en
+
+# Database Settings
+database:
+  # Type: yml or mysql
+  type: yml
+  mysql:
+    host: localhost
+    port: 3306
+    database: ghostyclaim
+    username: root
+    password: password
+    pool-size: 10
+    connection-timeout: 30000
+
+# Economy Settings (requires Vault)
+economy:
+  enabled: true
+  # Cost to create a claim (per block area)
+  claim-cost-per-block: 0.5
+  # Minimum flat cost to create a claim
+  claim-flat-cost: 100.0
+  # Percentage of the cost refunded when deleting a claim (0-100)
+  delete-refund-percent: 50
+
+# Claim Settings
+claims:
+  # Maximum claims per player (-1 = unlimited).
+  # This is the global fallback if no rank-permission matches.
+  max-per-player: 5
+  # Minimum claim area in blocks (width * length)
+  min-area: 25
+  # Maximum claim size in blocks
+  max-area: 50000
+  # Minimum claim dimensions (width and length must be at least this)
+  min-dimension: 5
+  # Allow claims in these worlds (empty = all worlds allowed)
+  allowed-worlds: []
+  # Worlds where claiming is NOT allowed
+  blocked-worlds:
+    - world_nether
+    - world_the_end
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Rank-Based Claim Limits  (LuckPerms integration)
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# Three methods — priority order: meta key > permission node > config default
+#
+# METHOD 1 — LuckPerms meta key (most flexible, any number):
+#   /lp group <rank> meta set ghostyclaim.max-claims <number>
+#   Example:
+#     /lp group default meta set ghostyclaim.max-claims 3
+#     /lp group vip     meta set ghostyclaim.max-claims 10
+#     /lp group mvp     meta set ghostyclaim.max-claims 25
+#     /lp group admin   meta set ghostyclaim.max-claims 9999
+#
+# METHOD 2 — Permission nodes defined below (add/remove as you like):
+#   /lp group <rank> permission set ghostyclaim.maxclaims.<value> true
+#   Example:
+#     /lp group vip permission set ghostyclaim.maxclaims.10 true
+#
+#   The plugin scans ALL values listed under permission-nodes, highest first.
+#   You can add any custom value — e.g. 42, 777 — and it just works.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+rank-permissions:
+  # The meta key name used for Method 1 (LuckPerms meta).
+  # Change this if you want a different meta key.
+  meta-key: "ghostyclaim.max-claims"
+
+  # The permission node prefix used for Method 2.
+  # A player with ghostyclaim.maxclaims.10 will be allowed 10 claims.
+  # Change the prefix here if you want e.g. "claims.max." instead.
+  permission-prefix: "ghostyclaim.maxclaims."
+
+  # All valid claim-count values for the permission-node method.
+  # Add or remove any values you want. The plugin checks them from
+  # highest to lowest — the first one the player has wins.
+  # You are NOT limited to this list; any integer after the prefix works
+  # via Method 1 (meta). For Method 2, only values listed here are checked.
+  permission-nodes:
+    - 9999   # unlimited / admin
+    - 500
+    - 200
+    - 100
+    - 75
+    - 50
+    - 40
+    - 30
+    - 25
+    - 20
+    - 15
+    - 12
+    - 10
+    - 9
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+
+# Visualizer Settings
+visualizer:
+  # Particle type: DUST, FLAME, END_ROD, HAPPY_VILLAGER
+  particle: DUST
+  # Particle color (hex, only for DUST)
+  color: "#FF0000"
+  # Particle size (only for DUST)
+  size: 1.5
+  # How many blocks to visualize per side per refresh
+  density: 1
+  # Refresh interval in ticks (20 ticks = 1 second)
+  refresh-interval: 10
+  # Height offsets to show particles at
+  height-offsets:
+    - 0
+    - 1
+    - 2
+
+# BossBar Settings (shown when inside a claim)
+bossbar:
+  enabled: true
+  color: BLUE
+  style: SOLID
+  # Prefix shown before the claim name
+  prefix: "⚑ "
+
+# Claim Session Settings (when creating a claim)
+session:
+  # How long (seconds) before the session times out and fly is removed.
+  # Recommended: 60–120  |  Set to 0 to disable.
+  timeout: 90
+
+  # Warn the player at these remaining-seconds thresholds (actionbar + sound).
+  # Set to [] to disable warnings.
+  warn-at-seconds:
+    - 60
+    - 30
+    - 10
+    - 5
+    - 3
+    - 2
+    - 1
+
+  # Show a countdown title in the last N seconds before kick.
+  countdown-title-seconds: 5
+
+  # ── Guide Border ─────────────────────────────────────────────────────────
+  # When /claim is executed a 4×4 chunk (64×64 block) guide border is
+  # displayed centered on the player so they know the maximum area.
+  guide-border:
+    # Toggle the guide border on/off.
+    enabled: true
+    # Side length of the guide square in blocks (default 64 = 4 chunks).
+    size: 64
+    # Particle used for the border. DUST supports color; others do not.
+    particle: DUST
+    # Color of the guide border (hex, only used for DUST).
+    color: "#FFFF00"
+    # Particle size (only for DUST).
+    particle-size: 1.2
+    # How often (in ticks) the border re-draws while the session is active.
+    refresh-interval: 15
+    # Height offsets relative to the player's Y for the border lines.
+    height-offsets:
+      - 0
+      - 1

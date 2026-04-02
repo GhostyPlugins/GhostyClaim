@@ -1,0 +1,265 @@
+# GhostyClaim Language File - English
+# Supports & color codes and &#RRGGBB hex codes
+# Author: Ger_Gh0stface
+
+prefix: "&#5555FF&lGhostyClaim &8| &r"
+
+general:
+  no-permission: "{prefix}&cYou don't have permission to do that!"
+  player-only: "{prefix}&cThis command can only be used by players!"
+  invalid-usage: "{prefix}&cInvalid usage! &7Use &f/claim help &7for help."
+  player-not-found: "{prefix}&cPlayer &f{player} &cnot found!"
+  reload-success: "{prefix}&aPlugin successfully reloaded!"
+  cooldown: "{prefix}&cPlease wait &f{seconds}s &cbefore using this again."
+
+economy:
+  not-available: "{prefix}&cEconomy is not available! &7(Vault not found)"
+  not-enough-money: "{prefix}&cYou need &f{amount} &cto create this claim! &7(You have: &f{balance}&7)"
+  charge-message: "{prefix}&aYou were charged &f{amount} &afor creating your claim."
+  refund-message: "{prefix}&aYou received &f{amount} &aback for deleting your claim."
+
+session:
+  started: |-
+    {prefix}&aYou entered &bClaim Creation Mode&a!
+    &7➜ Place &f4 Redstone Torches &7to define the corners of your claim.
+    &7➜ Click &a✔ Confirm &7in your hotbar to finish.
+    &7➜ Click &c✖ Cancel &7to abort.
+  already-active: "{prefix}&cYou already have an active claim session! Use &f/claim cancel &cto abort it."
+  already-claimed: "{prefix}&cThis area is already claimed by another player!"
+  cancelled: "{prefix}&cClaim session cancelled. &7Your items have been returned."
+  timeout: "{prefix}&cYour claim session has timed out and was cancelled."
+  torch-placed: "{prefix}&7Torch placed! &f{count}&7/&f4 &7corners set."
+  torch-removed: "{prefix}&7Torch removed. &f{count}&7/&f4 &7corners set."
+  torch-outside-world: "{prefix}&cYou cannot place claim torches here!"
+  torch-in-claim: "{prefix}&cA torch location is inside another claim!"
+  need-four-torches: "{prefix}&cYou need to place all &f4 &cRedstone Torches first!"
+  area-too-small: "{prefix}&cYour claim is too small! &7Minimum: &f{min} blocks &7(&f{actual} &7currently)"
+  area-too-large: "{prefix}&cYour claim is too large! &7Maximum: &f{max} blocks &7(&f{actual} &7currently)"
+  dimension-too-small: "{prefix}&cYour claim dimensions are too small! &7Minimum: &f{min} &7blocks per side."
+  overlaps-existing: "{prefix}&cYour claim overlaps with an existing claim!"
+  confirm-item-name: "&a✔ Confirm Claim"
+  confirm-item-lore:
+    - "&7Right-click to confirm"
+    - "&7your claim creation."
+  cancel-item-name: "&c✖ Cancel Claim"
+  cancel-item-lore:
+    - "&7Right-click to cancel"
+    - "&7your claim creation."
+  torch-item-name: "&#FF5555&lClaim Torch"
+  torch-item-lore:
+    - "&7Place &f4 torches &7to define"
+    - "&7the corners of your claim."
+    - ""
+    - "&8[&f{count}&8/&f4 &8placed]"
+  preview: "{prefix}&eArea preview: &f{minX},{minZ} &7to &f{maxX},{maxZ} &e(&f{area} &eblocks)"
+  # World border shown on confirm
+  confirm-prompt: "{prefix}&eClaim area: &f{area} &eblocks | Cost: &f{cost} | &aRight-click &a✔ Confirm &eto create!"
+  # Countdown / timeout messages
+  timeout-warning: "{prefix}&e⚠ Claim session expires in &f{seconds}s&e!"
+  actionbar: "{bar} &7{seconds}s &8/ &7{total}s"
+  countdown-title: "&c{seconds}"
+  countdown-subtitle: "&7Claim session expiring!"
+  timeout-title: "&cTime's up!"
+  timeout-subtitle: "&7Your claim session was cancelled."
+  guide-border-hint: "{prefix}&e⬡ Yellow border = max claimable area &8({size} blocks)"
+  torch-destroyed-physics: "{prefix}&eA claim torch was destroyed by water! &7({count}/4 remaining)"
+
+claim:
+  created: "{prefix}&aClaim &f\"{name}\" &ahas been created!"
+  deleted: "{prefix}&cClaim &f\"{name}\" &chas been deleted."
+  not-found: "{prefix}&cNo claim found here!"
+  not-owner: "{prefix}&cYou don't own this claim!"
+  no-permission-here: "{prefix}&cYou don't have permission to do that here!"
+  max-reached: "{prefix}&cYou have reached the maximum number of claims! &7(&f{max}&7)"
+  renamed: "{prefix}&aClaim renamed to &f\"{name}&f\"&a!"
+  name-too-long: "{prefix}&cClaim name too long! &7Maximum: &f{max} characters."
+  already-owns: "{prefix}&cYou already have a claim here!"
+  default-name: "{player}'s Claim"
+  info: |-
+    &8&m                                            
+    &#5555FF&lClaim Info
+    &7Owner: &f{owner}
+    &7Name: &f{name}
+    &7Size: &f{area} &7blocks &8(&f{minX},{minZ} &8→ &f{maxX},{maxZ}&8)
+    &7Trusted: &f{trusted}
+    &8&m                                            
+
+trust:
+  gui-title: "Manage Trusted Players"
+  trusted: "{prefix}&aPlayer &f{player} &ahas been trusted!"
+  untrusted: "{prefix}&cPlayer &f{player} &chas been untrusted."
+  already-trusted: "{prefix}&f{player} &cis already trusted!"
+  not-trusted: "{prefix}&f{player} &cis not trusted!"
+  cannot-trust-self: "{prefix}&cYou cannot trust yourself!"
+  is-owner: "{prefix}&f{player} &cis the owner of this claim!"
+
+flags:
+  gui-title: "Claim Flags"
+  enabled: "{prefix}&aFlag &f{flag} &aenabled!"
+  disabled: "{prefix}&cFlag &f{flag} &cdisabled."
+  tnt-name: "TNT Damage"
+  tnt-desc: "Allow TNT explosions inside the claim."
+  fire-spread-name: "Fire Spread"
+  fire-spread-desc: "Allow fire to spread inside the claim."
+  join-messages-name: "Enter Messages"
+  join-messages-desc: "Show a message when entering the claim."
+  leave-messages-name: "Leave Messages"
+  leave-messages-desc: "Show a message when leaving the claim."
+  pvp-name: "PvP"
+  pvp-desc: "Allow player vs. player combat in the claim."
+  mob-spawning-name: "Mob Spawning"
+  mob-spawning-desc: "Allow hostile mobs to spawn in the claim."
+  explosions-name: "Explosions"
+  explosions-desc: "Allow all explosion damage in the claim."
+  creeper-damage-name: "Creeper Damage"
+  creeper-damage-desc: "Allow Creeper explosions to damage blocks."
+  leaf-decay-name: "Leaf Decay"
+  leaf-decay-desc: "Allow leaves to decay naturally."
+  ice-melt-name: "Ice Melt"
+  ice-melt-desc: "Allow ice to melt inside the claim."
+  snow-melt-name: "Snow Melt"
+  snow-melt-desc: "Allow snow to melt inside the claim."
+  animal-damage-name: "Animal Damage"
+  animal-damage-desc: "Allow players to damage animals."
+  interact-name: "Guest Interact"
+  interact-desc: "Allow non-trusted players to use\nchests, buttons, levers etc."
+  status-on: "&a● Enabled"
+  status-off: "&c● Disabled"
+  click-to-toggle: "&7Click to toggle"
+
+visualizer:
+  enabled: "{prefix}&aVisualizer enabled! &7Claim borders are now visible."
+  disabled: "{prefix}&cVisualizer disabled."
+  no-claim: "{prefix}&cYou are not inside a claim!"
+
+enter-claim:
+  title: "&aBetreten"
+  subtitle: "&b{name}"
+  custom-message: "{prefix}&aBetreten &b{name}"
+
+leave-claim:
+  title: "&cVerlassen"
+  subtitle: "&b{name}"
+  custom-message: "{prefix}&cVerlassen &b{name}"
+
+gui:
+  main-title: "Claim Management"
+  list-title: "Your Claims"
+  close: "&cClose"
+  back: "&7← Back"
+  next-page: "&7Next Page →"
+  prev-page: "&7← Previous Page"
+  no-claims: "&cYou have no claims yet!"
+  # Items in main GUI
+  flags-item: "&b⚑ Manage Flags"
+  flags-item-lore:
+    - "&7Configure your claim's"
+    - "&7behavior settings."
+  trust-item: "&a✦ Manage Trust"
+  trust-item-lore:
+    - "&7Add or remove trusted"
+    - "&7players from your claim."
+  rename-item: "&e✎ Rename Claim"
+  rename-item-lore:
+    - "&7Click to rename"
+    - "&7your claim."
+  delete-item: "&c✗ Delete Claim"
+  delete-item-lore:
+    - "&7Delete your claim."
+    - "&cThis cannot be undone!"
+    - "&7Refund: &f{refund}"
+  visualize-item: "&d⬡ Visualizer"
+  visualize-item-lore:
+    - "&7Toggle the claim"
+    - "&7border visualizer."
+  info-item: "&f✦ Claim Info"
+  info-item-lore:
+    - "&7Owner: &f{owner}"
+    - "&7Area: &f{area} &7blocks"
+    - "&7Trusted: &f{trusted}"
+  confirm-delete-title: "Confirm Deletion"
+  confirm-delete-yes: "&aYes, delete it!"
+  confirm-delete-no: "&cNo, keep it!"
+
+help:
+  header: "&8&m----&r &#5555FF&lGhostyClaim &8Help &8&m----"
+  footer: "&8&m----------------------------------------"
+  commands:
+    - "&f/claim &7- Create new claim (or expand if inside your claim)"
+    - "&f/claim expand &7- Explicitly expand the claim you stand in"
+    - "&f/claim menu &7- Open the claim management GUI"
+    - "&f/claim list &7- List your claims"
+    - "&f/claim delete &7- Delete the claim you're standing in"
+    - "&f/claim trust <player> &7- Trust a player"
+    - "&f/claim untrust <player> &7- Untrust a player"
+    - "&f/claim flags &7- Manage claim flags"
+    - "&f/claim rename <name> &7- Rename your claim"
+    - "&f/claim visualize &7- Toggle border visualizer"
+    - "&f/claim info &7- Show claim information"
+    - "&f/claim cancel &7- Cancel claim creation/expansion"
+    - "&f/claim admin [player] &7- Admin claim GUI (Admin)"
+    - "&f/claimreload &7- Reload the plugin (Admin)"
+
+player-update:
+  name-changed: "{prefix}&7Claim owner name updated: &f{old} &7→ &f{new}"
+
+
+expansion:
+  started: |-
+    {prefix}&aYou entered &bClaim Expansion Mode&a for &f{name}&a!
+    &7Current size: &f{area} blocks &8(&f{minX},{minZ} &8→ &f{maxX},{maxZ}&8)
+    &7➜ Place &f4 Redstone Torches &7around the &enew, larger &7boundary.
+    &7➜ The new area &emust fully contain &7your original claim.
+    &7➜ Only the &eprice difference &7will be charged.
+    &7➜ Click &a✔ Expand &7to confirm, &c✖ Cancel &7to abort.
+  success: "{prefix}&aClaim &f\"{name}\" &aexpanded! &7(&f{oldArea} &7→ &f{newArea} &7blocks)"
+  must-contain-original: "{prefix}&cThe new area must fully enclose your original claim! &7The original corners must be inside the new boundary."
+  torch-item-name: "&#FF8800&lExpansion Torch"
+  confirm-item-name: "&a✔ Expand Claim"
+  info-item-name: "&e⬡ Original Claim"
+  info-item-lore:
+    - "&7Name: &f{name}"
+    - "&7Current size: &f{area} &7blocks"
+    - "&7Corners: &f{minX},{minZ} &7→ &f{maxX},{maxZ}"
+    - ""
+    - "&eNew boundary must enclose all corners above."
+
+admin-gui:
+  list-title: "&#FF5500&lAdmin &8| &fAll Claims"
+  detail-title: "&#FF5500&lAdmin &8| &f{name}"
+  no-claims: "&cNo claims found!"
+  confirm-delete-title: "&#FF0000Admin Delete: {name}"
+  filter-item: "&e⚙ Filter by Owner"
+  stats-item: "&7Server Claim Stats"
+
+  teleport-item: "&b⬡ Teleport to Claim"
+  teleport-item-lore:
+    - "&7Teleport to the center"
+    - "&7of claim &f{name}&7."
+  teleported: "{prefix}&aTeleported to claim &f{name}&a!"
+
+  change-owner-item: "&e✦ Change Owner"
+  change-owner-item-lore:
+    - "&7Current owner: &f{owner}"
+    - ""
+    - "&eClick to transfer this claim"
+    - "&eto a different player."
+  change-owner-prompt: "{prefix}&eType the name of the new owner for &f{name}&e (or &ccancel&e):"
+  owner-changed: "{prefix}&aClaim &f{name} &atransferred: &f{old} &8→ &f{new}"
+
+  toggle-all-item: "&d⬡ Toggle All Flags"
+  toggle-all-item-lore:
+    - "&7Flip every flag on this claim."
+    - "&7Current: {status}"
+  flags-toggled: "{prefix}&aAll flags on &f{name} &aset to &f{status}&a!"
+
+  delete-item: "&c✗ Force Delete"
+  delete-item-lore:
+    - "&7Claim: &f{name}"
+    - "&7Owner: &e{owner}"
+    - ""
+    - "&cThis cannot be undone!"
+    - "&7Owner receives &cno refund&7."
+  deleted: "{prefix}&cAdmin deleted claim &f{name} &c(owner: &f{owner}&c)."
+
+  help-line: "&f/claim admin [player] &7- Open admin GUI (optionally filter by owner)"

@@ -1,0 +1,263 @@
+# GhostyClaim Sprachdatei - Deutsch
+# Unterstützt & Farbcodes und &#RRGGBB Hex-Codes
+# Autor: Ger_Gh0stface
+
+prefix: "&#5555FF&lGhostyClaim &8| &r"
+
+general:
+  no-permission: "{prefix}&cDu hast keine Berechtigung dafür!"
+  player-only: "{prefix}&cDieser Befehl kann nur von Spielern verwendet werden!"
+  invalid-usage: "{prefix}&cUngültige Verwendung! &7Nutze &f/claim help &7für Hilfe."
+  player-not-found: "{prefix}&cSpieler &f{player} &cnicht gefunden!"
+  reload-success: "{prefix}&aPlugin erfolgreich neu geladen!"
+  cooldown: "{prefix}&cBitte warte &f{seconds}s &cbevor du das wieder nutzt."
+
+economy:
+  not-available: "{prefix}&cWirtschaft nicht verfügbar! &7(Vault nicht gefunden)"
+  not-enough-money: "{prefix}&cDu benötigst &f{amount} &cum dieses Grundstück zu erstellen! &7(Du hast: &f{balance}&7)"
+  charge-message: "{prefix}&aDu wurdest &f{amount} &afür die Erstellung deines Grundstücks berechnet."
+  refund-message: "{prefix}&aDu hast &f{amount} &afür das Löschen deines Grundstücks zurückerhalten."
+
+session:
+  started: |-
+    {prefix}&aDu hast den &bGrundstück-Erstellungsmodus&a betreten!
+    &7➜ Platziere &f4 Redstone-Fackeln &7für die Ecken deines Grundstücks.
+    &7➜ Klicke auf &a✔ Bestätigen &7in deiner Hotbar zum Fertigstellen.
+    &7➜ Klicke auf &c✖ Abbrechen &7um abzubrechen.
+  already-active: "{prefix}&cDu hast bereits eine aktive Sitzung! Nutze &f/claim abbrechen &cum sie abzubrechen."
+  already-claimed: "{prefix}&cDieses Gebiet wurde bereits von einem anderen Spieler beansprucht!"
+  cancelled: "{prefix}&cGrundstück-Sitzung abgebrochen. &7Deine Gegenstände wurden zurückgegeben."
+  timeout: "{prefix}&cDeine Grundstück-Sitzung ist abgelaufen und wurde abgebrochen."
+  torch-placed: "{prefix}&7Fackel gesetzt! &f{count}&7/&f4 &7Ecken gesetzt."
+  torch-removed: "{prefix}&7Fackel entfernt. &f{count}&7/&f4 &7Ecken gesetzt."
+  torch-outside-world: "{prefix}&cDu kannst hier keine Claim-Fackeln platzieren!"
+  torch-in-claim: "{prefix}&cEine Fackeln-Position liegt in einem anderen Grundstück!"
+  need-four-torches: "{prefix}&cDu musst erst alle &f4 &cRedstone-Fackeln platzieren!"
+  area-too-small: "{prefix}&cDein Grundstück ist zu klein! &7Minimum: &f{min} Blöcke &7(&f{actual} &7aktuell)"
+  area-too-large: "{prefix}&cDein Grundstück ist zu groß! &7Maximum: &f{max} Blöcke &7(&f{actual} &7aktuell)"
+  dimension-too-small: "{prefix}&cDeine Grundstück-Abmessungen sind zu klein! &7Minimum: &f{min} &7Blöcke pro Seite."
+  overlaps-existing: "{prefix}&cDein Grundstück überschneidet sich mit einem vorhandenen!"
+  confirm-item-name: "&a✔ Bestätigen"
+  confirm-item-lore:
+    - "&7Rechtsklick um die Erstellung"
+    - "&7deines Grundstücks zu bestätigen."
+  cancel-item-name: "&c✖ Abbrechen"
+  cancel-item-lore:
+    - "&7Rechtsklick um die Erstellung"
+    - "&7deines Grundstücks abzubrechen."
+  torch-item-name: "&#FF5555&lClaim-Fackel"
+  torch-item-lore:
+    - "&7Platziere &f4 Fackeln &7um die"
+    - "&7Ecken deines Grundstücks zu setzen."
+    - ""
+    - "&8[&f{count}&8/&f4 &8platziert]"
+  preview: "{prefix}&eVorschau: &f{minX},{minZ} &7bis &f{maxX},{maxZ} &e(&f{area} &eBlöcke)"
+  confirm-prompt: "{prefix}&eGrundstück-Fläche: &f{area} &eBlöcke | Kosten: &f{cost} | &aRechtsklick &a✔ Bestätigen &eum es zu erstellen!"
+  # Countdown / Timeout-Nachrichten
+  timeout-warning: "{prefix}&e⚠ Claim-Sitzung läuft in &f{seconds}s &eab!"
+  actionbar: "{bar} &7{seconds}s &8/ &7{total}s"
+  countdown-title: "&c{seconds}"
+  countdown-subtitle: "&7Claim-Sitzung läuft ab!"
+  timeout-title: "&cZeit abgelaufen!"
+  timeout-subtitle: "&7Deine Claim-Sitzung wurde abgebrochen."
+  guide-border-hint: "{prefix}&e⬡ Gelbe Border = max. Claim-Fläche &8({size} Blöcke)"
+  torch-destroyed-physics: "{prefix}&eEine Claim-Fackel wurde durch Wasser zerstört! &7({count}/4 übrig)"
+
+claim:
+  created: "{prefix}&aGrundstück &f\"{name}\" &awurde erstellt!"
+  deleted: "{prefix}&cGrundstück &f\"{name}\" &cwurde gelöscht."
+  not-found: "{prefix}&cKein Grundstück hier gefunden!"
+  not-owner: "{prefix}&cDu besitzt dieses Grundstück nicht!"
+  no-permission-here: "{prefix}&cDu hast hier keine Berechtigung dafür!"
+  max-reached: "{prefix}&cDu hast die maximale Anzahl an Grundstücken erreicht! &7(&f{max}&7)"
+  renamed: "{prefix}&aGrundstück wurde zu &f\"{name}&f\" &aumbenannt!"
+  name-too-long: "{prefix}&cGrundstücksname zu lang! &7Maximum: &f{max} Zeichen."
+  already-owns: "{prefix}&cDu hast hier bereits ein Grundstück!"
+  default-name: "Grundstück von {player}"
+  info: |-
+    &8&m                                            
+    &#5555FF&lGrundstück-Info
+    &7Besitzer: &f{owner}
+    &7Name: &f{name}
+    &7Größe: &f{area} &7Blöcke &8(&f{minX},{minZ} &8→ &f{maxX},{maxZ}&8)
+    &7Vertraute: &f{trusted}
+    &8&m                                            
+
+trust:
+  gui-title: "Vertraute Spieler verwalten"
+  trusted: "{prefix}&aSpieler &f{player} &awurde vertraut!"
+  untrusted: "{prefix}&cSpieler &f{player} &cwurde nicht mehr vertraut."
+  already-trusted: "{prefix}&f{player} &cwird bereits vertraut!"
+  not-trusted: "{prefix}&f{player} &cwird nicht vertraut!"
+  cannot-trust-self: "{prefix}&cDu kannst dir selbst nicht vertrauen!"
+  is-owner: "{prefix}&f{player} &cist der Besitzer dieses Grundstücks!"
+
+flags:
+  gui-title: "Grundstück-Flags"
+  enabled: "{prefix}&aFlag &f{flag} &aaktiviert!"
+  disabled: "{prefix}&cFlag &f{flag} &cdeaktiviert."
+  tnt-name: "TNT-Schaden"
+  tnt-desc: "Erlaube TNT-Explosionen im Grundstück."
+  fire-spread-name: "Feuerausbreitung"
+  fire-spread-desc: "Erlaube das Ausbreiten von Feuer."
+  join-messages-name: "Betreten-Nachrichten"
+  join-messages-desc: "Zeige eine Nachricht beim Betreten."
+  leave-messages-name: "Verlassen-Nachrichten"
+  leave-messages-desc: "Zeige eine Nachricht beim Verlassen."
+  pvp-name: "PvP"
+  pvp-desc: "Erlaube Spieler-gegen-Spieler-Kampf."
+  mob-spawning-name: "Mob-Spawning"
+  mob-spawning-desc: "Erlaube feindliche Mobs zu spawnen."
+  explosions-name: "Explosionen"
+  explosions-desc: "Erlaube Explosionsschaden im Grundstück."
+  creeper-damage-name: "Creeper-Schaden"
+  creeper-damage-desc: "Erlaube Creeper-Explosionen an Blöcken."
+  leaf-decay-name: "Laubzerfall"
+  leaf-decay-desc: "Erlaube natürlichen Laubzerfall."
+  ice-melt-name: "Eisschmelzen"
+  ice-melt-desc: "Erlaube Eisschmelzen im Grundstück."
+  snow-melt-name: "Schneeschmelzen"
+  snow-melt-desc: "Erlaube Schneeschmelzen im Grundstück."
+  animal-damage-name: "Tierschaden"
+  animal-damage-desc: "Erlaube Spielern, Tiere zu beschädigen."
+  interact-name: "Gast-Interaktion"
+  interact-desc: "Erlaube nicht-vertrauten Spielern\nTruhen, Knöpfe, Hebel etc. zu nutzen."
+  status-on: "&a● Aktiviert"
+  status-off: "&c● Deaktiviert"
+  click-to-toggle: "&7Klicken zum Umschalten"
+
+visualizer:
+  enabled: "{prefix}&aVisualisierung aktiviert! &7Die Grundstücksgrenzen sind jetzt sichtbar."
+  disabled: "{prefix}&cVisualisierung deaktiviert."
+  no-claim: "{prefix}&cDu befindest dich nicht in einem Grundstück!"
+
+enter-claim:
+  title: "&aBetreten"
+  subtitle: "&b{name}"
+  custom-message: "{prefix}&aBetreten &b{name}"
+
+leave-claim:
+  title: "&cVerlassen"
+  subtitle: "&b{name}"
+  custom-message: "{prefix}&cVerlassen &b{name}"
+
+gui:
+  main-title: "Grundstück verwalten"
+  list-title: "Deine Grundstücke"
+  close: "&cSchließen"
+  back: "&7← Zurück"
+  next-page: "&7Nächste Seite →"
+  prev-page: "&7← Vorherige Seite"
+  no-claims: "&cDu hast noch keine Grundstücke!"
+  flags-item: "&b⚑ Flags verwalten"
+  flags-item-lore:
+    - "&7Konfiguriere die Verhaltens-"
+    - "&7einstellungen deines Grundstücks."
+  trust-item: "&a✦ Vertrauen verwalten"
+  trust-item-lore:
+    - "&7Füge vertraute Spieler"
+    - "&7hinzu oder entferne sie."
+  rename-item: "&e✎ Grundstück umbenennen"
+  rename-item-lore:
+    - "&7Klicke um deinen"
+    - "&7Grundstücksnamen zu ändern."
+  delete-item: "&c✗ Grundstück löschen"
+  delete-item-lore:
+    - "&7Lösche dein Grundstück."
+    - "&cDies kann nicht rückgängig gemacht werden!"
+    - "&7Rückerstattung: &f{refund}"
+  visualize-item: "&d⬡ Visualisierer"
+  visualize-item-lore:
+    - "&7Schalte den Grundstücks-"
+    - "&7Grenz-Visualisierer um."
+  info-item: "&f✦ Grundstück-Info"
+  info-item-lore:
+    - "&7Besitzer: &f{owner}"
+    - "&7Fläche: &f{area} &7Blöcke"
+    - "&7Vertraute: &f{trusted}"
+  confirm-delete-title: "Löschen bestätigen"
+  confirm-delete-yes: "&aJa, löschen!"
+  confirm-delete-no: "&cNein, behalten!"
+
+help:
+  header: "&8&m----&r &#5555FF&lGhostyClaim &8Hilfe &8&m----"
+  footer: "&8&m----------------------------------------"
+  commands:
+    - "&f/claim &7- Neues Grundstück erstellen (oder erweitern wenn du in deinem Grundstück stehst)"
+    - "&f/claim expand &7- Grundstück, auf dem du stehst, explizit erweitern"
+    - "&f/claim menu &7- Grundstück-Verwaltungs-GUI öffnen"
+    - "&f/claim list &7- Deine Grundstücke auflisten"
+    - "&f/claim delete &7- Grundstück löschen, auf dem du stehst"
+    - "&f/claim trust <Spieler> &7- Einem Spieler vertrauen"
+    - "&f/claim untrust <Spieler> &7- Spieler-Vertrauen entfernen"
+    - "&f/claim flags &7- Grundstück-Flags verwalten"
+    - "&f/claim rename <Name> &7- Grundstück umbenennen"
+    - "&f/claim visualize &7- Grenz-Visualisierer umschalten"
+    - "&f/claim info &7- Grundstück-Informationen anzeigen"
+    - "&f/claim cancel &7- Erstellungs-/Erweiterungs-Sitzung abbrechen"
+    - "&f/claim admin [Spieler] &7- Admin Grundstück-GUI (Admin)"
+    - "&f/claimreload &7- Plugin neu laden (Admin)"
+
+player-update:
+  name-changed: "{prefix}&7Grundstücks-Besitzername aktualisiert: &f{old} &7→ &f{new}"
+
+
+expansion:
+  started: |-
+    {prefix}&aDu hast den &bGrundstück-Erweiterungsmodus&a für &f{name}&a betreten!
+    &7Aktuelle Größe: &f{area} Blöcke &8(&f{minX},{minZ} &8→ &f{maxX},{maxZ}&8)
+    &7➜ Platziere &f4 Redstone-Fackeln &7um die &eneue, größere &7Grenze.
+    &7➜ Die neue Fläche muss dein originales Grundstück &evollständig umschließen&7.
+    &7➜ Nur der &ePreisunterschied &7wird berechnet.
+    &7➜ Klicke &a✔ Erweitern &7zum Bestätigen, &c✖ Abbrechen &7zum Abbrechen.
+  success: "{prefix}&aGrundstück &f\"{name}\" &aerweitert! &7(&f{oldArea} &7→ &f{newArea} &7Blöcke)"
+  must-contain-original: "{prefix}&cDie neue Fläche muss dein originales Grundstück vollständig umschließen! &7Die originalen Ecken müssen innerhalb der neuen Grenze liegen."
+  torch-item-name: "&#FF8800&lErweiterungs-Fackel"
+  confirm-item-name: "&a✔ Grundstück erweitern"
+  info-item-name: "&e⬡ Originales Grundstück"
+  info-item-lore:
+    - "&7Name: &f{name}"
+    - "&7Aktuelle Größe: &f{area} &7Blöcke"
+    - "&7Ecken: &f{minX},{minZ} &7→ &f{maxX},{maxZ}"
+    - ""
+    - "&eNeue Grenze muss alle obigen Ecken einschließen."
+
+admin-gui:
+  list-title: "&#FF5500&lAdmin &8| &fAlle Grundstücke"
+  detail-title: "&#FF5500&lAdmin &8| &f{name}"
+  no-claims: "&cKeine Grundstücke gefunden!"
+  confirm-delete-title: "&#FF0000Admin Löschen: {name}"
+  filter-item: "&e⚙ Nach Besitzer filtern"
+  stats-item: "&7Server Grundstück-Statistiken"
+
+  teleport-item: "&b⬡ Zum Grundstück teleportieren"
+  teleport-item-lore:
+    - "&7Teleportiere zum Mittelpunkt"
+    - "&7von Grundstück &f{name}&7."
+  teleported: "{prefix}&aZu Grundstück &f{name} &ateleportiert!"
+
+  change-owner-item: "&e✦ Besitzer ändern"
+  change-owner-item-lore:
+    - "&7Aktueller Besitzer: &f{owner}"
+    - ""
+    - "&eKlicke um dieses Grundstück"
+    - "&ean einen anderen Spieler zu übertragen."
+  change-owner-prompt: "{prefix}&eGib den Namen des neuen Besitzers für &f{name}&e ein &8(oder &cabbrechen&8):"
+  owner-changed: "{prefix}&aGrundstück &f{name} &aübertragen: &f{old} &8→ &f{new}"
+
+  toggle-all-item: "&d⬡ Alle Flags umschalten"
+  toggle-all-item-lore:
+    - "&7Alle Flags dieses Grundstücks umschalten."
+    - "&7Aktuell: {status}"
+  flags-toggled: "{prefix}&aAlle Flags von &f{name} &aauf &f{status} &agestellt!"
+
+  delete-item: "&c✗ Erzwungen löschen"
+  delete-item-lore:
+    - "&7Grundstück: &f{name}"
+    - "&7Besitzer: &e{owner}"
+    - ""
+    - "&cDies kann nicht rückgängig gemacht werden!"
+    - "&7Der Besitzer erhält &ckeine Rückerstattung&7."
+  deleted: "{prefix}&cAdmin hat Grundstück &f{name} &cgelöscht &8(Besitzer: &f{owner}&8)."
+
+  help-line: "&f/claim admin [Spieler] &7- Admin-GUI öffnen (optional nach Besitzer filtern)"
