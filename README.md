@@ -20,7 +20,7 @@ Supports Minecraft 1.21+ (Bukkit, Spigot & Paper).
 - Claim expansion — expand an existing claim, only the price difference is charged
 - Dual database support: flat YAML or MySQL with connection pooling
 - Player name sync — automatically updates owner names on username change
-- Supports [ICODE]&[/ICODE] and HEX color codes ([ICODE]&#RRGGBB[/ICODE])
+- Supports `&` and HEX color codes (`#RRGGBB`)
 - Full English & German translations
 - Fully customizable language files
 
